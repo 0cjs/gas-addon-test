@@ -1,6 +1,6 @@
 'use strict'
 
-//=require gas-date-sort/Code.js
+//=require gas-addon-test/Code.js
 
 exports.testHello = (test) => {
     test.expect(1)
