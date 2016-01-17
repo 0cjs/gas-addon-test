@@ -11,7 +11,7 @@ exports.testFoo = {
 
 exports.testHello = (test) => {
     test.expect(1)
-    test.equal('Hello, world', 'Hello, world')
+    test.equal(hello('world'), 'Hello, world')
     test.done()
 }
 

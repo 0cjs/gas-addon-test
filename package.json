@@ -11,6 +11,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "gulp-nodeunit-runner": "^0.2.2",
     "nodeunit": "^0.9.1"
   }
