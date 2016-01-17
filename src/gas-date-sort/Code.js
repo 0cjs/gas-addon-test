@@ -1,7 +1,7 @@
 'use strict'
 
 function f() {
-    Logger.log('f()')
+    Logger.log('add-on f()')
 }
 
 function hello(name) {
