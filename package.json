@@ -1,0 +1,12 @@
+{
+  "name": "gas-date-sort",
+  "version": "0.1.0",
+  "description": "Project to test development of a Google Apps Script plugin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}
