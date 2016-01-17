@@ -1,10 +1,10 @@
 'use strict'
+// jshint node: true
 
 const gulp = require('gulp')
 const concat = require('gulp-concat')
 const include = require('gulp-include')
 const rename = require('gulp-rename')
-const dest_clean = require('gulp-dest-clean')
 const nodeunit_runner = require('gulp-nodeunit-runner')
 
 const through = require('through2')
@@ -12,17 +12,24 @@ const showVs = (prefix) => {
     return through.obj((file, encoding, callback) => {
         console.log('======== ', prefix)
         console.log(
-            'keys: ', Object.keys(file),
-            '\npath: ', file.path,
+            'path: ', file.path,
             '\nbase: ', file.base,
-            '\ncwd: ', file.cwd,
             '\nhistory: ', file.history)
         callback(null, file)
     })
 }
 
+gulp.task('jshint', () => {
+    const jshint = require('gulp-jshint')
+    return gulp
+        .src(['gulpfile.js', 'src/**/*.[gj][st]'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+})
+
 gulp.task('build-gas-unit-test', () => {
-    const output = '.build/gas-unit-test/'
+    const output = '.build/gas-unit-test/',
+        dest_clean = require('gulp-dest-clean')
     return gulp
         .src('src/**/*.gt')
         .pipe(include())
