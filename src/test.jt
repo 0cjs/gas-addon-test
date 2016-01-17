@@ -1,3 +1,17 @@
 'use strict'
 
+// Object with tests format; allows setup and teardown functions.
+exports.testFoo = {
+    foo: (test) => {
+        test.expect(1)
+        test.equal('foo', 'foo')
+        test.done()
+    }
+}
+
+exports.testHello = (test) => {
+    test.expect(1)
+    test.equal('Hello, world', 'Hello, world')
+    test.done()
+}
 
