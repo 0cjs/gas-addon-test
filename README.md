@@ -1,3 +1,10 @@
+gas-addon-test
+--------------
+
+A bunch of code to test development of Google Apps Script Add-ons
+(in this case, one for Google Sheets) using local source and testing
+framework, with a target to upload the code to Google when done.
+
 Requirements
 ------------
 
