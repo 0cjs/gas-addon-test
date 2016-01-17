@@ -1,6 +1,13 @@
 'use strict'
 
 /*
+ * XXX Note that custom functions are not bound if you use this with
+ * "Test as add-on;" you need to make a "real" add-on for them to bind.
+ * This is a known issue:
+ * https://code.google.com/p/google-apps-script-issues/issues/detail?id=5603
+ */
+
+/*
  * @customfunction
  */
 function f() {
