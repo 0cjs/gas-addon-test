@@ -2,6 +2,9 @@
 
 const gulp = require('gulp')
 const concat = require('gulp-concat')
+const include = require('gulp-include')
+const rename = require('gulp-rename')
+const dest_clean = require('gulp-dest-clean')
 const nodeunit_runner = require('gulp-nodeunit-runner')
 
 const through = require('through2')
@@ -18,23 +21,19 @@ const showVs = (prefix) => {
     })
 }
 
-const deleteFiles = through.obj((file, encoding, callback) => {
-    const fs = require('fs'), path = file.path
-    console.log('***** Unlinking ', path)
-    //fs.unlinkSync(path)   // XXX may run before test runner is done!
-    callback(null, null)
+gulp.task('build-gas-unit-test', () => {
+    const output = '.build/gas-unit-test/'
+    return gulp
+        .src('src/**/*.gt')
+        .pipe(include())
+        .on('error', console.log)
+        .pipe(rename({ extname: '.jt' }))
+        .pipe(dest_clean(output))
+        .pipe(gulp.dest(output))
 })
 
-gulp.task('test', function() {
-    gulp.src(['./src/gas-date-sort/**/*.js', './src/**/*.jt'])
-        .pipe(showVs('1'))
-        .pipe(concat('gas-test.js'))
-        .pipe(showVs('2'))
-        .pipe(gulp.dest('tmp'))
-        .pipe(showVs('3'))
+gulp.task('test', ['build-gas-unit-test'], () => {
+    return gulp
+        .src(['src/**/*.jt', '.build/**/*.jt'])
         .pipe(nodeunit_runner())
-        .pipe(showVs('4'))
-        .pipe(deleteFiles)
-        .pipe(showVs('5'))
-
-});
+})

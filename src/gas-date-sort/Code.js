@@ -5,5 +5,5 @@ function f() {
 }
 
 function hello(name) {
-    return 'XXX Hello, ' + name
+    return 'Hello, ' + name
 }

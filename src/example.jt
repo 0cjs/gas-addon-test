@@ -1,0 +1,11 @@
+'use strict'
+
+// Example of object with tests format
+// which allows setup and teardown functions.
+exports.testFoo = {
+    foo: (test) => {
+        test.expect(1)
+        test.equal('foo', 'foo')
+        test.done()
+    }
+}

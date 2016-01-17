@@ -1,0 +1,10 @@
+'use strict'
+
+//=require gas-date-sort/Code.js
+
+exports.testHello = (test) => {
+    test.expect(1)
+    test.equal(hello('world'), 'Hello, world')
+    test.done()
+}
+
