@@ -1,5 +1,5 @@
 gas-addon-test
---------------
+==============
 
 A bunch of code to test development of Google Apps Script Add-ons
 (in this case, one for Google Sheets) using local source and testing
@@ -14,13 +14,17 @@ a version with the `download` command from:
     https://github.com/cjs-cynic-net/node-google-apps-script
 
 
-Notes on Scripts Stuff
-----------------------
+Notes on GAS
+============
 
 I don't know where these tricks related to GAS projects are documented
 (if they even are), so I'm going to document them here, for the moment.
 
-Some useful stuff I've seen in the Google example code:
+
+Two Different Levels of Permission to Access a Document
+-------------------------------------------------------
+
+From the Google example code:
 
     // For testing - broadens the OAuth scope to allow opening any
     // Spreadsheet on the current user's Drive
