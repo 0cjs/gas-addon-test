@@ -34,6 +34,19 @@ to enabled when anybody uses the add-on in the document. If two people
 collaborate on a document, and one of them uses an add-on, it is
 installed for the one user and enabled for the document.
 
+Installed:
+    * Applies to the user account
+    * Is caused by getting an add-on from the store
+    * The menu item for that add-in is visible only to that user account
+    * opnOen(e) runs in AuthMode.NONE (when not also enabled)
+
+Enabled:
+    * Applies to a particular document (when any user is using it)
+    * Is caused by getting an add-on from the store while using that document
+      or by using a previously installed add-on in that document
+    * The menu item for that add-in is visible to anybody using the document
+    * onOpen(e) runs in AuthMode.LIMITED
+
 [testaddon]: https://developers.google.com/apps-script/add-ons/test
 [i.vs.e]: https://developers.google.com/apps-script/add-ons/lifecycle#installed_versus_enabled
 
