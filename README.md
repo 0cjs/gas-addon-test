@@ -21,6 +21,23 @@ I don't know where these tricks related to GAS projects are documented
 (if they even are), so I'm going to document them here, for the moment.
 
 
+Add-ons: Installed vs. Enabled
+------------------------------
+
+When [testing a script as an add-on][testaddon] you'll have to choose
+an initial authorization state: installed, enabled, or both. The add-on
+appears in the Add-ons menu in either state.
+
+When installed, that means that a user has chosen the add-on in the
+store and authorized it to access their Google data. The status switches
+to enabled when anybody uses the add-on in the document. If two people
+collaborate on a document, and one of them uses an add-on, it is
+installed for the one user and enabled for the document.
+
+[testaddon]: https://developers.google.com/apps-script/add-ons/test
+[i.vs.e]: https://developers.google.com/apps-script/add-ons/lifecycle#installed_versus_enabled
+
+
 Two Different Levels of Permission to Access a Document
 -------------------------------------------------------
 
