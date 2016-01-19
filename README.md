@@ -12,3 +12,27 @@ This project assumes that you have `gapps` in your path. You can get
 a version with the `download` command from:
 
     https://github.com/cjs-cynic-net/node-google-apps-script
+
+
+Notes on Scripts Stuff
+----------------------
+
+I don't know where these tricks related to GAS projects are documented
+(if they even are), so I'm going to document them here, for the moment.
+
+Some useful stuff I've seen in the Google example code:
+
+    // For testing - broadens the OAuth scope to allow opening any
+    // Spreadsheet on the current user's Drive
+    /** @NotOnlyCurrentDoc */
+
+This will ask for permission to "View and manage your spreadsheets in
+Google Drive".
+
+    // For production, this script will now only be able to act on
+    // Spreadsheets that it is attached to via a user installing and
+    // activating the add-on.
+    /** @OnlyCurrentDoc */
+
+This will ask for permission to "View and manage spreadsheets that this
+application has been installed in".
